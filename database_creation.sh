@@ -1,4 +1,6 @@
 #!/bin/bash
+# You can run this scrip inside of the database instance or wrap it into user_date,
+# script which will create database while booting.
 PASS=`pwgen -s 40 1`
 
 mysql -uroot <<MYSQL_SCRIPT
@@ -11,6 +13,3 @@ MYSQL_SCRIPT
 echo "MySQL user created."
 echo "Username:   $1"
 echo "Password:   $PASS"
-
-# You can run this scrip inside of the database instance or wrap it into user_date,
-# script which will create database while booting.
